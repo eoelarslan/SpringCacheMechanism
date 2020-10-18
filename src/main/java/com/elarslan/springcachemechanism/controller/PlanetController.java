@@ -1,9 +1,10 @@
 package com.elarslan.springcachemechanism.controller;
 
+import com.elarslan.springcachemechanism.controller.base.GenericResponse;
 import com.elarslan.springcachemechanism.dto.PlanetX;
 import com.elarslan.springcachemechanism.dto.base.GenericResponseDto;
-import com.elarslan.springcachemechanism.planetenum.Location;
-import com.elarslan.springcachemechanism.planetenum.PlanetType;
+import com.elarslan.springcachemechanism.planetenum.LocationEnum;
+import com.elarslan.springcachemechanism.planetenum.PlanetTypeEnum;
 import com.elarslan.springcachemechanism.service.PlanetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -20,14 +21,14 @@ public class PlanetController {
     @Autowired
     PlanetService planetService;
 
-    @GetMapping("/searchMovie")
-    public ResponseEntity<?> getMovieDetail(@RequestParam String planetName,
-                                            @RequestParam PlanetType planetType,
-                                            @RequestParam Location planetLocation) throws InterruptedException {
+    @GetMapping("/getReachablePlanet")
+    public ResponseEntity<?> getReachablePlanet(@RequestParam String planetName,
+                                                @RequestParam PlanetTypeEnum planetTypeEnum,
+                                                @RequestParam LocationEnum planetLocationEnum) throws InterruptedException {
         PlanetX planetX = PlanetX.builder()
                 .name(planetName)
-                .planetType(planetType)
-                .planetLocation(planetLocation)
+                .planetTypeEnum(planetTypeEnum)
+                .planetLocationEnum(planetLocationEnum)
                 .build();
 
         return ResponseEntity.ok().body(new GenericResponseDto<>(HttpStatus.OK,

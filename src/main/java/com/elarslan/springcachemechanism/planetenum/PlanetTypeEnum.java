@@ -1,6 +1,6 @@
 package com.elarslan.springcachemechanism.planetenum;
 
-public enum PlanetType {
+public enum PlanetTypeEnum {
     TERRESTRIAL(0),
     GAS_GIANT(1),
     ICE_GIANT(2),
@@ -8,7 +8,7 @@ public enum PlanetType {
 
     private final int planetTypeCode;
 
-    PlanetType(int planetTypeCode) {
+    PlanetTypeEnum(int planetTypeCode) {
         this.planetTypeCode = planetTypeCode;
     }
 

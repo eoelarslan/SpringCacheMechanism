@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.4.RELEASE</version>
+        <version>2.0.0.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.elarslan</groupId>
@@ -72,17 +72,54 @@
              <version>2.9.2</version>
          </dependency>
 
-         <!--<dependency>
-             <groupId>io.springfox</groupId>
-             <artifactId>springfox-boot-starter</artifactId>
-             <version>3.0.0</version>
-         </dependency>-->
-
          <dependency>
              <groupId>io.springfox</groupId>
              <artifactId>springfox-swagger-ui</artifactId>
              <version>2.9.2</version>
          </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.infinispan/infinispan-core -->
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-core</artifactId>
+            <version>${infinispan.version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.infinispan/infinispan-commons -->
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-commons</artifactId>
+            <version>${infinispan.version}</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.infinispan/infinispan-spring4-embedded -->
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-spring4-embedded</artifactId>
+            <version>${infinispan.version}</version>
+        </dependency>
+
+
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.infinispan/infinispan-spring-boot-starter-embedded &ndash;&gt;
+                <dependency>
+                    <groupId>org.infinispan</groupId>
+                    <artifactId>infinispan-spring-boot-starter-embedded</artifactId>
+                    <version>2.2.4.Final</version>
+                </dependency>-->
+
+
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-cache &ndash;&gt;
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-cache</artifactId>
+            <version>2.3.4.RELEASE</version>
+        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.25</version>
+        </dependency>
     </dependencies>
 
     <build>

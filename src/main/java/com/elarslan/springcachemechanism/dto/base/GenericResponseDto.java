@@ -20,7 +20,7 @@ public class GenericResponseDto<T> {
     private List<T> results;
 
     @JsonInclude(JsonInclude.Include.NON_NULL)
-    private Object singleResult;
+    private T singleResult;
 
     public GenericResponseDto(HttpStatus status, String message, List<T> results) {
         this.status = status;
@@ -29,14 +29,10 @@ public class GenericResponseDto<T> {
         this.results = Objects.requireNonNullElseGet(results, ArrayList::new);
     }
 
-    public GenericResponseDto(HttpStatus status, String message, Object singleResult) {
+    public GenericResponseDto(HttpStatus status, String message, T singleResult) {
         this.status = status;
         this.message = message;
 
-        if (singleResult != null) {
-            this.singleResult = singleResult;
-        } else {
-            this.singleResult = new ArrayList<>();
-        }
+        this.singleResult = Objects.requireNonNullElseGet(singleResult, () -> (T) new Object());
     }
 }

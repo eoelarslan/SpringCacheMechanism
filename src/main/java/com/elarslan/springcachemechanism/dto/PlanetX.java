@@ -1,7 +1,7 @@
 package com.elarslan.springcachemechanism.dto;
 
-import com.elarslan.springcachemechanism.planetenum.Location;
-import com.elarslan.springcachemechanism.planetenum.PlanetType;
+import com.elarslan.springcachemechanism.planetenum.LocationEnum;
+import com.elarslan.springcachemechanism.planetenum.PlanetTypeEnum;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -13,6 +13,6 @@ import lombok.ToString;
 @ToString
 public class PlanetX {
     private String name;
-    private PlanetType planetType;
-    private Location planetLocation;
+    private PlanetTypeEnum planetTypeEnum;
+    private LocationEnum planetLocationEnum;
 }
